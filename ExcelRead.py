@@ -23,7 +23,7 @@ class ExcelReader:
             clients_df = clients_df[clients_df.iloc[:,0].notnull()]
             clients_df = clients_df.reset_index(drop=True)
             clients= []
-            for  i in clients_df.columns[0]:
+            for  i in clients_df.iloc[:,0]:
                 if(type(i) == float):
                     number_string = str(i)
                     if(number_string[0]  == '5'):
@@ -38,7 +38,7 @@ class ExcelReader:
                         number = "0" + number_string[3:12]
                         clients.append(number)
                 else:
-                    if(i[0:2]  == '05' or  i[0] == '5'):
+                    if(i[0:2]  == '05' or  i[0] == '5' or i[0:3] == '972'):
                         clients.append(i)
             return clients
         except Exception as e:
