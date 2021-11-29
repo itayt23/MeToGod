@@ -35,7 +35,6 @@ class MeScrap:
         try:
             cookies = self.loadCookies()
             url = "https://web.me.app/"
-            #browser = webdriver.Chrome(executable_path=r"C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\computer science\python\Horizon\chromedriver.exe",chrome_options=cookies)
             browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=cookies)
             browser.get(url)
             return browser
@@ -62,7 +61,7 @@ class MeScrap:
             return clients_dict
         except:
             self.writeFile()
-            print("Problem accured during the data reading!! the patch close before it finish")
+            print("Problem accured during the data reading!! the patch close before it was finish")
             input('Press ENTER to exit') 
             sys.exit(1)
 

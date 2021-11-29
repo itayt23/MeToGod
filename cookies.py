@@ -4,7 +4,6 @@ import pickle
 def save_cookie(driver, path):
     with open(path, 'wb') as filehandler:
         pickle.dump(driver.get_cookies(), filehandler)
-        print("Here are the cokkies!!!!@##$$#^&^%*&*^*^&")
         print(driver.get_cookies())
 
 def load_cookie(driver, path):
