@@ -22,7 +22,7 @@ class MeScrap:
         clients_df = pd.DataFrame(data=self.clients,index=[self.group])
         clients_df = (clients_df.T)
         group_name = self.group.replace('"',"").replace(':',"").replace('?',"").replace('\\',"").replace('/',"").replace('<',"").replace('>',"").replace('*',"").replace('|',"")
-        clients_df.to_excel(group_name+' לקוחות מקבוצת.xlsx')
+        clients_df.to_excel(group_name+' לקוחות.xlsx')
 
     def loadCookies(self):
         dir_path = os.getcwd()

@@ -7,8 +7,8 @@ class ExcelReader:
     def __init__(self) -> None:
         pass
 
-    def pathFix(self):
-            input_path = input("Drag input file")
+    def pathFix(self,input_path):
+            #input_path = input("Drag input file")
             input_path = input_path.split('\\')
             input_path = input_path[-1]
             input_path = input_path[:-1]
