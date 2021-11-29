@@ -1,6 +1,8 @@
 import pandas as pd
 import sys
 
+from pandas.core.indexing import _iLocIndexer
+
 
 class ExcelReader:
 
@@ -18,10 +20,10 @@ class ExcelReader:
     def readFile(self, input_path):
         try:
             clients_df = pd.read_excel(input_path)
-            clients_df = clients_df[clients_df['Unnamed: 0'].notnull()]
+            clients_df = clients_df[clients_df.iloc[:,0].notnull()]
             clients_df = clients_df.reset_index(drop=True)
             clients= []
-            for  i in clients_df['Unnamed: 0']:
+            for  i in clients_df.columns[0]:
                 if(type(i) == float):
                     number_string = str(i)
                     if(number_string[0]  == '5'):
@@ -34,7 +36,6 @@ class ExcelReader:
                         clients.append(number)
                     elif (number_string[0:3] =='972'):
                         number = "0" + number_string[3:12]
-                        print(number)
                         clients.append(number)
                 else:
                     if(i[0:2]  == '05' or  i[0] == '5'):
