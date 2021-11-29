@@ -34,6 +34,8 @@ class WhatsAppScrap:
                 numbers_fix.append(i)
         for i in numbers_fix:
             numbers_fix_final.append(i[1:14])
+        for i in numbers_fix_final:
+            i.replace('+972',"0")
         return numbers_fix_final
 
     def loadCookies(self):
