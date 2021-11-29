@@ -1,3 +1,4 @@
+from logging import ERROR
 from selenium.webdriver.chrome.webdriver import WebDriver
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
@@ -7,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 import sys
+
 
 class MeScrap:
     numbers = []
@@ -41,7 +43,7 @@ class MeScrap:
         except Exception as e:
             print( "Error found: %s" % str(e) )
             print("Error in oppening browser or reading Url")
-            input('Press ENTER to exit') 
+            #input('Press ENTER to exit') 
             sys.exit(1)
 
     

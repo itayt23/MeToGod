@@ -1,3 +1,4 @@
-2021/11/29-10:01:04.812 880 Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/11/29-10:01:04.812 880 Recovering log #3
-2021/11/29-10:01:04.921 880 Reusing old log C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000003.log 
+2021/11/29-14:38:54.565 6698 Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/11/29-14:38:54.565 6698 Recovering log #6
+2021/11/29-14:38:54.577 6698 Reusing old log C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000006.log 
+2021/11/29-14:38:54.577 6698 Delete type=2 #5
