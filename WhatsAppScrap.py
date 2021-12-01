@@ -26,17 +26,12 @@ class WhatsAppScrap:
 
     def fixNumbers(self, numbers):
         numbers_fix =[]
-        numbers_fix_final =[]
-        numbers = numbers.replace(" ","").replace("-","")
+        numbers = numbers.replace(" ","").replace("-","").replace("+972","0")
         numbers = numbers.split(',')
         for i in numbers:
-            if(i[1:5] == '+972'):
+            if(i[0:2] == '05'):
                 numbers_fix.append(i)
-        for i in numbers_fix:
-            numbers_fix_final.append(i[1:14])
-        for i in numbers_fix_final:
-            i.replace('+972',"0")
-        return numbers_fix_final
+        return numbers_fix
 
     def loadCookies(self):
         dir_path = os.getcwd()
