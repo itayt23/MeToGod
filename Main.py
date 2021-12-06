@@ -1,10 +1,9 @@
-from queue import Empty
 import PySimpleGUI as sg
 from WhatsAppScrap import WhatsAppScrap
 from MeScrap import MeScrap
 from ExcelRead import ExcelReader 
-import sys
 from window import Layout
+
 
 layout = Layout()
 window = layout.setWindow(layout.getMainLayout())
@@ -32,6 +31,24 @@ while True:
     elif event == "Read from WhatsApp":
         window.close()
         window = sg.Window('Caller Finder',layout.getWhatsAppLayout(), size=(750,350),element_justification='c')
+    elif event == "Search" and values["-GROUP_NAME-"] != "":
+        window["-PROG-"].UpdateBar(1)
+        whatsapp_scraper = WhatsAppScrap(values["-GROUP_NAME-"])
+        window["-PROG-"].UpdateBar(2)
+        numbers = whatsapp_scraper.searchNumbers()
+        window["-PROG-"].UpdateBar(3)
+        whatsapp_scraper.numbers = whatsapp_scraper.fixNumbers(numbers)
+        window["-PROG-"].UpdateBar(4)
+        me_scraper = MeScrap(whatsapp_scraper.numbers,values["-GROUP_NAME-"])
+        window["-PROG-"].UpdateBar(5)
+        me_scraper.clients = me_scraper.getClients(whatsapp_scraper.numbers)
+        window["-PROG-"].UpdateBar(6)
+        me_scraper.writeFile()
+        window["-PROG-"].UpdateBar(7)
+        break
+    elif event == "Read from Yad2":
+        window.close()
+        window = sg.Window('Caller Finder',layout.getYad2Layout(), size=(750,350),element_justification='c')
     elif event == "Search" and values["-GROUP_NAME-"] != "":
         window["-PROG-"].UpdateBar(1)
         whatsapp_scraper = WhatsAppScrap(values["-GROUP_NAME-"])

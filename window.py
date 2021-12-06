@@ -27,7 +27,7 @@ class Layout:
         [sg.Button("Exit",size=(8,1),button_color=('red','black'))]]          
 
         self.layout_yad2 = [[sg.T("")],
-        [sg.Text("Please enter city name: "), sg.Input(key="-GROUP_NAME-" ,change_submits=True), sg.Button("Search")],
+        [sg.Text("Please enter city name: "), sg.Input(key="-CITY_NAME-" ,change_submits=True), sg.Button("Start")],
         [sg.T("")],
         [sg.Text("Progress: "), sg.ProgressBar(max_value=7, orientation='h', size=(30,20), key="-PROG-")],
         [sg.Button("Exit",size=(8,1),button_color=('red','black'))]]  
