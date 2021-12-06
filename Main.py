@@ -4,34 +4,10 @@ from WhatsAppScrap import WhatsAppScrap
 from MeScrap import MeScrap
 from ExcelRead import ExcelReader 
 import sys
+from window import Layout
 
-sg.theme("DarkBrown")
-
-
-layout_main = [[sg.T("")],
-        [sg.Button("Read from WhatsApp", size=(20,4)), sg.Button("Read from Excel file", size=(20,4))],
-        [sg.T("")],
-        [sg.T("")],
-        [sg.Button("Exit",size=(8,1),button_color=('red','black'))]]   
-
-
-layout_excel = [[sg.T("")],
-        [sg.Text("Please enter Group name: "), sg.Input(key="-FILE_NAME-" ,change_submits=True)],
-        [sg.Text("Choose a folder: "), sg.Input(key="-IN2-" ,change_submits=True), sg.FileBrowse(key="-FILE-", file_types=(("Excel Files", "*.xlsx"),("Excel Files", "*.xls")))],
-        [sg.Button("Submit")],
-        [sg.T("")],
-        [sg.Text("Progress: "), sg.ProgressBar(max_value=5, orientation='h', size=(30,20), key="-PROG-")],
-        [sg.Text(key='-OUT1-', size=(20, 1))],
-        [sg.Button("Exit",size=(8,1),button_color=('red','black'))]]
-
-layout_whatsapp = [[sg.T("")],
-        [sg.Text("Please enter the exact group name: "), sg.Input(key="-GROUP_NAME-" ,change_submits=True), sg.Button("Search")],
-        [sg.T("")],
-        [sg.Text("Progress: "), sg.ProgressBar(max_value=7, orientation='h', size=(30,20), key="-PROG-")],
-        [sg.Text("working....", key="-OUT2-", size=(20,1), justification='c')],
-        [sg.Button("Exit",size=(8,1),button_color=('red','black'))]]          
-
-window = sg.Window('Caller Finder',layout_main, size=(750,500),element_justification='c')
+layout = Layout()
+window = layout.setWindow(layout.getMainLayout())
 
 while True:
     event, values = window.read()
@@ -39,7 +15,7 @@ while True:
         break
     elif event == "Read from Excel file":
         window.close()
-        window = sg.Window('Caller Finder',layout_excel, size=(750,500),element_justification='c')
+        window = sg.Window('Caller Finder',layout.getExcelLayout(), size=(750,350),element_justification='c')
     elif event == "Submit" and values["-FILE_NAME-"] != "":
         window["-PROG-"].UpdateBar(1)
         file_path = values["-FILE-"]
@@ -55,7 +31,7 @@ while True:
         break
     elif event == "Read from WhatsApp":
         window.close()
-        window = sg.Window('Caller Finder',layout_whatsapp, size=(750,500),element_justification='c')
+        window = sg.Window('Caller Finder',layout.getWhatsAppLayout(), size=(750,350),element_justification='c')
     elif event == "Search" and values["-GROUP_NAME-"] != "":
         window["-PROG-"].UpdateBar(1)
         whatsapp_scraper = WhatsAppScrap(values["-GROUP_NAME-"])

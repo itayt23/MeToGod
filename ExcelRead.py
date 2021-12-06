@@ -1,8 +1,8 @@
 import pandas as pd
 import sys
+import PySimpleGUI as sg
 
 from pandas.core.indexing import _iLocIndexer
-
 
 class ExcelReader:
 
@@ -10,17 +10,14 @@ class ExcelReader:
         pass
 
     def pathFix(self,input_path):
-            #input_path = input("Drag input file")
             input_path = input_path.split('\\')
             input_path = input_path[-1]
             input_path = input_path[:-1]
-            return input_path
-
-
-    def readFile(self, input_path):
+            return input_path           
+    
+    def fixFile(self, file):
         try:
-            clients_df = pd.read_excel(input_path)
-            clients_df = clients_df[clients_df.iloc[:,0].notnull()]
+            clients_df = file[file.iloc[:,0].notnull()]
             clients_df = clients_df.reset_index(drop=True)
             clients= []
             for  i in clients_df.iloc[:,0]:
@@ -42,6 +39,13 @@ class ExcelReader:
                         clients.append(i)
             return clients
         except Exception as e:
-            print( "Error found: %s" % str(e) )
-            input('Press ENTER to exit') 
+            sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading the numbers in the file, check if the numbers are in column 0.")
             sys.exit(1)
+
+    def readFile(self, input_path):
+        try:
+            clients_df = pd.read_excel(input_path)
+        except Exception as e:
+            sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading file.")
+            sys.exit(1)
+        return self.fixFile(clients_df)

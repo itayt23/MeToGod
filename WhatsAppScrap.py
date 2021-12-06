@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 import sys
 import time
+import PySimpleGUI as sg
 
 class WhatsAppScrap:
 
@@ -61,10 +62,9 @@ class WhatsAppScrap:
             browser.close()
             print("WhatsApp looking for phones done successfully, please wait for MeScrapping...")
             return group_numbers
-        except:
+        except Exception as e:
+            sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading file.")
             browser.close()
-            print("Problem accured during looking for the group!! check maybe the name is incorrect")
-            input('Press ENTER to exit') 
             sys.exit(1)
 
 

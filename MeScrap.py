@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 import sys
+import PySimpleGUI as sg
 
 
 class MeScrap:
@@ -41,9 +42,7 @@ class MeScrap:
             browser.get(url)
             return browser
         except Exception as e:
-            print( "Error found: %s" % str(e) )
-            print("Error in oppening browser or reading Url")
-            #input('Press ENTER to exit') 
+            sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Oppening browser or reading Url.")
             sys.exit(1)
 
     
@@ -61,47 +60,7 @@ class MeScrap:
                 search_box.clear()
             browser.close()
             return clients_dict
-        except:
-            self.writeFile()
-            print("Problem accured during the data reading!! the patch close before it was finish")
-            input('Press ENTER to exit') 
-            sys.exit(1)
-
-
-
-''''
-    def pathFix(self):
-        input_path = input("Drag input file")
-        input_path = input_path.split('\\')
-        input_path = input_path[-1]
-        input_path = input_path[:-1]
-        return input_path
-
-        
-    def readFile(input_path):
-        try:
-            clients_df = pd.read_excel(input_path)
-            clients_df = clients_df[clients_df['Unnamed: 0'].notnull()]
-            clients_df = clients_df.reset_index(drop=True)
-            clients= []
-            for  i in clients_df['Unnamed: 0']:
-                if(type(i) == float):
-                    number_string = str(i)
-                    if(number_string[0]  == '5'):
-                        number = "0" + number_string[0:9]
-                        clients.append(number)
-                elif(type(i) == int) :
-                    number_string = str(i)
-                    if(number_string[0]  == '5'):
-                        number = "0" + number_string
-                        clients.append(number)
-                else:
-                    if(i[0:2]  == '05' or  i[0] == '5'):
-                        clients.append(i)
-            return clients
         except Exception as e:
-            print( "Error found: %s" % str(e) )
-            input('Press ENTER to exit') 
+            self.writeFile()
+            sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem accured during the data reading!! the patch close before it was finish.")
             sys.exit(1)
-
-'''
