@@ -1,3 +1,2 @@
-2021/12/01-13:05:22.553 3a2c Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\Local Storage\leveldb/MANIFEST-000001
-2021/12/01-13:05:22.555 3a2c Recovering log #4
-2021/12/01-13:05:22.556 3a2c Reusing old log C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\Local Storage\leveldb/000004.log 
+2021/12/13-11:49:01.742 2d0c Creating DB C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\Local Storage\leveldb since it was missing.
+2021/12/13-11:49:01.775 2d0c Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\Local Storage\leveldb/MANIFEST-000001

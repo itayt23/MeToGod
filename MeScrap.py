@@ -46,12 +46,12 @@ class MeScrap:
             sys.exit(1)
 
     
-    def getClients(self, clients):
+    def getClients(self):
         browser = self.setBrowser()
         clients_dict = {}
         search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/input")))
         try:
-            for number in clients:
+            for number in self.numbers:
                 search_box.send_keys(number)
                 search_box_button = WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/button")))
                 search_box_button.click()

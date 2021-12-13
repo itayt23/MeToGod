@@ -1,3 +1,2 @@
-2021/12/01-13:05:22.717 3c0 Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\shared_proto_db/MANIFEST-000001
-2021/12/01-13:05:22.718 3c0 Recovering log #3
-2021/12/01-13:05:22.719 3c0 Reusing old log C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\shared_proto_db/000003.log 
+2021/12/13-11:49:01.840 2568 Creating DB C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\shared_proto_db since it was missing.
+2021/12/13-11:49:01.845 2568 Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\shared_proto_db/MANIFEST-000001

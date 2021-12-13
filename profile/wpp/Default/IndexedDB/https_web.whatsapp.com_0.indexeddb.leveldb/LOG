@@ -1,3 +1,2 @@
-2021/12/01-13:03:16.450 48c Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/12/01-13:03:16.450 48c Recovering log #10
-2021/12/01-13:03:16.522 48c Reusing old log C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000010.log 
+2021/12/13-11:49:04.931 37dc Creating DB C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2021/12/13-11:49:04.938 37dc Reusing MANIFEST C:\Users\Itay\OneDrive\OneDrive - Technion\Documents\Programming\Horizon\CallerFinder\CallerFinder\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
