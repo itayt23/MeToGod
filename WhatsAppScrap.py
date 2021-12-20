@@ -71,15 +71,14 @@ class WhatsAppScrap:
                     group_numbers = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/header/div[2]/div[2]/span"))).text
                     print("WhatsApp looking for phones done successfully, please wait...")
                     search_box.clear()
-                    browser.close()
+                    browser.quit()
                     self.numbers = group_numbers
-                    #return group_numbers
                 else:
                     sg.popup_error(f"Pay Attention!!""\n Error: the group name is not matching the group you choose!\n try again!.")
 
         except Exception as e:
             sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading the group numbers.")
-            browser.close()
+            browser.quit()
             sys.exit(1)
 
 
