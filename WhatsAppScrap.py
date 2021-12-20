@@ -26,15 +26,21 @@ class WhatsAppScrap:
     def getNumbers(self):
         return self.numbers
 
+    def writeFile(self):
+        clients_df = pd.DataFrame([self.numbers], index=[self.group])
+        clients_df = (clients_df.T)
+        group_name = self.group.replace('"',"").replace(':',"").replace('?',"").replace('\\',"").replace('/',"").replace('<',"").replace('>',"").replace('*',"").replace('|',"")
+        clients_df.to_excel(group_name+' לקוחות.xlsx')
 
-    def fixNumbers(self, numbers):
+    def fixNumbers(self):
         numbers_fix =[]
-        numbers = numbers.replace(" ","").replace("-","").replace("+972","0").replace("\u2066","").replace('\u2069',"")
+        numbers = self.numbers.replace(" ","").replace("-","").replace("+972","0").replace("\u2066","").replace('\u2069',"")
         numbers = numbers.split(',')
         for i in numbers:
             if(i[0:2] == '05'):
                 numbers_fix.append(i)
-        return numbers_fix
+        self.numbers = numbers_fix
+        #return numbers_fix
 
     def loadCookies(self):
         dir_path = os.getcwd()
@@ -63,16 +69,16 @@ class WhatsAppScrap:
                 if(self.similar(group_name, self.group) > 0.5):
                     time.sleep(3)
                     group_numbers = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/header/div[2]/div[2]/span"))).text
-                    print("WhatsApp looking for phones done successfully, please wait for MeScrapping...")
+                    print("WhatsApp looking for phones done successfully, please wait...")
                     search_box.clear()
-                    browser.close()
-                    return group_numbers
+                    browser.quit()
+                    self.numbers = group_numbers
                 else:
                     sg.popup_error(f"Pay Attention!!""\n Error: the group name is not matching the group you choose!\n try again!.")
 
         except Exception as e:
             sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading the group numbers.")
-            browser.close()
+            browser.quit()
             sys.exit(1)
 
 

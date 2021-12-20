@@ -17,10 +17,16 @@ class ExcelReader:
     
     def fixFile(self, file):
         try:
-            clients_df = file[file.iloc[:,0].notnull()]
+            print(file.iloc[0,0])
+            if(file.iloc[0,0] == '0' or file.iloc[0,0] == 0):
+                clients_df = file[file.iloc[:,1].notnull()]
+                column = 1
+            else:
+                clients_df = file[file.iloc[:,0].notnull()]
+                column = 0
             clients_df = clients_df.reset_index(drop=True)
             clients= []
-            for  i in clients_df.iloc[:,0]:
+            for  i in clients_df.iloc[:,column]:
                 if(type(i) == float):
                     number_string = str(i)
                     if(number_string[0]  == '5'):

@@ -46,7 +46,7 @@ class MeScrap:
             sys.exit(1)
 
     
-    def getClients(self):
+    def ScrapClients(self):
         browser = self.setBrowser()
         clients_dict = {}
         search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/input")))
@@ -58,9 +58,11 @@ class MeScrap:
                 client_name = WebDriverWait(browser, 20).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]"))).text
                 clients_dict[client_name] = number
                 search_box.clear()
-            browser.close()
-            return clients_dict
+            browser.quit()
+            self.clients = clients_dict
+            #return clients_dict
         except Exception as e:
+            self.clients = clients_dict
             self.writeFile()
             sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem accured during the data reading!! the patch close before it was finish.")
             sys.exit(1)
