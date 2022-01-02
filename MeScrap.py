@@ -62,6 +62,7 @@ class MeScrap:
                 client_name = WebDriverWait(browser, 20).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]"))).text
                 clients_dict[client_name] = number
                 if(index % 20 == 0): time.sleep(10)
+                #comon!
                 search_box.clear()
             browser.quit()
             self.clients = clients_dict
