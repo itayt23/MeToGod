@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 import sys
 import PySimpleGUI as sg
+import time
+import random
 
 
 class MeScrap:
@@ -51,12 +53,15 @@ class MeScrap:
         clients_dict = {}
         search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/input")))
         try:
-            for number in self.numbers:
+            for index, number in enumerate(self.numbers):
+                if(index % random.randint(10,15) == 0): time.sleep(random.uniform(2.5,6))
                 search_box.send_keys(number)
                 search_box_button = WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/button")))
+                if(index % random.randint(5,15) == 0): time.sleep(random.uniform(0.5,3))
                 search_box_button.click()
                 client_name = WebDriverWait(browser, 20).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]"))).text
                 clients_dict[client_name] = number
+                if(index % 20 == 0): time.sleep(10)
                 search_box.clear()
             browser.quit()
             self.clients = clients_dict
