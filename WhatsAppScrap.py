@@ -61,7 +61,7 @@ class WhatsAppScrap:
     
     def searchNumbers(self):
         browser = self.setBrowser()
-        search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[3]/div/div[1]/div/label/div/div[2]")))
+        # search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[3]/div/div[1]/div/label/div/div[2]")))
         try:
             group_name = ""
             while(self.similar(group_name, self.group) < 0.5):
@@ -70,7 +70,7 @@ class WhatsAppScrap:
                     time.sleep(3)
                     group_numbers = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/header/div[2]/div[2]/span"))).text
                     print("WhatsApp looking for phones done successfully, please wait...")
-                    search_box.clear()
+                    # search_box.clear()
                     browser.quit()
                     self.numbers = group_numbers
                 else:
