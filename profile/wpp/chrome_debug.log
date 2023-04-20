@@ -1,0 +1,6 @@
+[15296:7644:0420/150347.103:WARNING:chrome_main_delegate.cc(594)] This is Chrome version 112.0.5615.137 (not a warning)
+[15296:7644:0420/150347.168:INFO:chrome_browser_cloud_management_controller.cc(167)] Starting CBCM Controller Initialization
+[15296:7644:0420/150347.168:INFO:chrome_browser_cloud_management_controller.cc(195)] No machine level policy manager exists.
+[15296:7644:0420/150350.617:ERROR:device_event_log_impl.cc(222)] [15:03:50.617] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[15296:7644:0420/150350.629:ERROR:device_event_log_impl.cc(222)] [15:03:50.629] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[15296:7644:0420/150418.753:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

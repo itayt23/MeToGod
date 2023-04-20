@@ -1,0 +1,26 @@
+2023/04/20-15:03:47.869 2280 Reusing MANIFEST c:\Users\itayt\Documents\Programming\MeToGod\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/04/20-15:03:47.870 2280 Recovering log #173
+2023/04/20-15:03:47.921 2280 Reusing old log c:\Users\itayt\Documents\Programming\MeToGod\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000173.log 
+2023/04/20-15:04:01.799 3134 Level-0 table #185: started
+2023/04/20-15:04:01.833 3134 Level-0 table #185: 1015946 bytes OK
+2023/04/20-15:04:01.837 3134 Delete type=0 #173
+2023/04/20-15:04:08.686 3134 Compacting 1@1 + 8@2 files
+2023/04/20-15:04:08.731 3134 Generated table #186@1: 36815 keys, 2203769 bytes
+2023/04/20-15:04:08.784 3134 Generated table #187@1: 36458 keys, 2194124 bytes
+2023/04/20-15:04:08.817 3134 Generated table #188@1: 8853 keys, 2166809 bytes
+2023/04/20-15:04:08.850 3134 Generated table #189@1: 6415 keys, 2131600 bytes
+2023/04/20-15:04:08.896 3134 Generated table #190@1: 53560 keys, 2186901 bytes
+2023/04/20-15:04:08.966 3134 Generated table #191@1: 92157 keys, 2240792 bytes
+2023/04/20-15:04:09.047 3134 Generated table #192@1: 92076 keys, 2239033 bytes
+2023/04/20-15:04:09.114 3134 Generated table #193@1: 76613 keys, 1867875 bytes
+2023/04/20-15:04:09.114 3134 Compacted 1@1 + 8@2 files => 17230903 bytes
+2023/04/20-15:04:09.115 3134 compacted to: files[ 0 0 8 0 0 0 0 ]
+2023/04/20-15:04:09.115 3134 Delete type=2 #175
+2023/04/20-15:04:09.115 3134 Delete type=2 #176
+2023/04/20-15:04:09.115 3134 Delete type=2 #177
+2023/04/20-15:04:09.115 3134 Delete type=2 #178
+2023/04/20-15:04:09.115 3134 Delete type=2 #179
+2023/04/20-15:04:09.115 3134 Delete type=2 #180
+2023/04/20-15:04:09.115 3134 Delete type=2 #181
+2023/04/20-15:04:09.115 3134 Delete type=2 #182
+2023/04/20-15:04:09.115 3134 Delete type=2 #185
