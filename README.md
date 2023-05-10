@@ -8,4 +8,5 @@ fixing problem with reading numers to excel problem
 --------------------------------
 ----------------V3--------------
 - Whatsaap page was change their XPath - fixed it
+- Adding new Option for splitting excel file to X files
 --------------------------------
