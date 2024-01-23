@@ -53,9 +53,11 @@ class WhatsAppScrap:
         return SequenceMatcher(None, a, b).ratio()
 
     def setBrowser(self):
-        cookies = self.loadCookies()
+        # cookies = self.loadCookies()
         url = "https://web.whatsapp.com/"
-        browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=cookies)
+        # browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=cookies)
+        # browser = webdriver.Chrome(ChromeDriverManager().install())
+        browser = webdriver.Chrome()
         browser.get(url)
         return browser
     
@@ -65,10 +67,10 @@ class WhatsAppScrap:
         try:
             group_name = ""
             while(self.similar(group_name, self.group) < 0.5):
-                group_name = WebDriverWait(browser, 25).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/header/div[2]/div[1]/div/span"))).text
+                group_name = WebDriverWait(browser, 120).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[4]/div/header/div[2]/div[1]/div/span"))).text
                 if(self.similar(group_name, self.group) > 0.5):
                     time.sleep(3)
-                    group_numbers = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/header/div[2]/div[2]/span"))).text
+                    group_numbers = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[4]/div/header/div[2]/div[2]/span"))).text
                     print("WhatsApp looking for phones done successfully, please wait...")
                     # search_box.clear()
                     browser.quit()
