@@ -17,7 +17,6 @@ class ExcelReader:
     
     def fixFile(self, file):
         try:
-            print(file.iloc[0,0])
             if(file.iloc[0,0] == '0' or file.iloc[0,0] == 0):
                 clients_df = file[file.iloc[:,1].notnull()]
                 column = 1
@@ -54,4 +53,5 @@ class ExcelReader:
         except Exception as e:
             sg.popup_error(f"Oops!", e.__class__, "occurred.\n Error: Problem with reading file.")
             sys.exit(1)
+        # return clients_df
         return self.fixFile(clients_df)

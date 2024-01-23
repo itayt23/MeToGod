@@ -40,7 +40,9 @@ class MeScrap:
         try:
             cookies = self.loadCookies()
             url = "https://web.me.app/"
-            browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=cookies)
+            browser = webdriver.Chrome()
+            # browser = webdriver.Chrome(ChromeDriverManager().install())
+            # browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=cookies)
             browser.get(url)
             return browser
         except Exception as e:
@@ -53,6 +55,7 @@ class MeScrap:
         clients_dict = {}
         search_box =  WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/input")))
         try:
+            self.numbers = self.numbers[:3]
             for index, number in enumerate(self.numbers):
                 if(index % random.randint(10,15) == 0): time.sleep(random.uniform(2.5,6))
                 search_box.send_keys(number)
